@@ -2,7 +2,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { getServerSession } from 'next-auth/next'
-import { authOptions } from '@/lib/loginAuth'
+import { authConfigs } from '@/lib/loginAuth'
 
 import SessionAuthProvider from '@/context/providers/SessionAuthProvider'
 const inter = Inter({ subsets: ['latin'] })
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 }
 //https://github.com/vercel/next.js/discussions/42134#discussioncomment-6354884
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const session = await getServerSession(authOptions)
+  const session = await getServerSession(authConfigs)
 
   return (
     <html lang='en'>
