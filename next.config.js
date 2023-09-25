@@ -7,6 +7,11 @@ const nextConfig = {
         hostname: 'lh3.googleusercontent.com',
         port: '',
       },
+      {
+        protocol: 'https',
+        hostname: 'profile.line-scdn.net',
+        port: '',
+      },
     ],
   },
 }

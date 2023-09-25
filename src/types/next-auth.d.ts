@@ -8,6 +8,7 @@ declare module 'next-auth' {
    */
 
   interface Session {
+    /* 擴充 Session 結構 interface 定義 */
     user: {
       /** The user's postal address. */
       id: number
