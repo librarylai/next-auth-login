@@ -10,7 +10,7 @@ export default async function Home() {
       {session && (
         <div className='mb-4 flex flex-col  items-center'>
           <Image width={60} height={60} alt={'profile'} src={session.user.image} />
-          <div>{session.user.email}</div>
+          <div className='font-momo'>{session.user.email}</div>
         </div>
       )}
       <div className='flex gap-3 flex-col bg-white rounded-2xl  p-12'>

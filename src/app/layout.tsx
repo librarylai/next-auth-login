@@ -1,10 +1,16 @@
-import './globals.css'
+import '@/app/globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Roboto_Mono } from 'next/font/google'
 import { getServerSession } from 'next-auth/next'
 import { authConfigs } from '@/lib/loginAuth'
 import SessionAuthProvider from '@/context/providers/SessionAuthProvider'
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const robotoMono = Roboto_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-roboto-mono',
+})
+console.log('inter', inter)
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,7 +21,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      <body className={`${inter.variable} ${robotoMono.variable}`}>
         <SessionAuthProvider session={session}>{children}</SessionAuthProvider>
       </body>
     </html>
